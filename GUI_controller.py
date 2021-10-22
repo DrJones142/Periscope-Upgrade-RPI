@@ -46,7 +46,6 @@ def activatePopUp4():
 def setPWMSlider1(Slider1_value):
     pwmValue = int(Slider1_value)
     setPWMValue(4,pwmValue)
-    print(Slider1_value)
 
 def setPWMSlider2(Slider2_value):
     setPWMValue(5,int(Slider2_value))

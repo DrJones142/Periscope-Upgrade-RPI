@@ -1,7 +1,6 @@
 # import everything from tkinter module
 from tkinter import *   
 
- 
 # create a tkinter window
 root = Tk()             
  
@@ -42,6 +41,8 @@ def activatePopUp4():
         PopUp4['text']="Pop Up 4 Deactivated"
         lowerPopUp(4)
 
+## functions for PWM Slider (speed)
+
 def setPWMSlider1(Slider1_value):
     pwmValue = int(Slider1_value)
     setPWMValue(4,pwmValue)
@@ -53,7 +54,25 @@ def setPWMSlider3(Slider3_value):
     setPWMValue(6,int(Slider3_value))
 
 def setPWMSlider4(Slider4_value):
-    setPWMValue(7,int(Slider4_value))        
+    setPWMValue(7,int(Slider4_value))
+
+## functions for PWM (brightness) 
+
+def setPWMLEDSlider1(SliderLED1_value):
+    pwmValue = int(SliderLED1_value)
+    setPWMValue(1,pwmValue)
+
+def setPWMLEDSlider2(SliderLED2_value):
+    pwmValue = int(SliderLED2_value)
+    setPWMValue(2,pwmValue)
+
+def setPWMLEDSlider3(SliderLED3_value):
+    pwmValue = int(SliderLED3_value)
+    setPWMValue(3,pwmValue)
+
+def setPWMLEDSlider4(SliderLED4_value):
+    pwmValue = int(SliderLED4_value)
+    setPWMValue(4,pwmValue)       
 
 # Create a Button
 PopUp1 = Button(root, text = 'Pop Up 1 Deactivated', bd = '5',
@@ -74,10 +93,10 @@ PopUpSlider4 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlide
 
 
 #creates sliders for LED brightness
-PopUpLEDSlider1 = Scale(root,from_=0, to=255, orient=HORIZONTAL)
-PopUpLEDSlider2 = Scale(root,from_=0, to=255, orient=HORIZONTAL)
-PopUpLEDSlider3 = Scale(root,from_=0, to=255, orient=HORIZONTAL)
-PopUpLEDSlider4 = Scale(root,from_=0, to=255, orient=HORIZONTAL)
+PopUpLEDSlider1 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMLEDSlider1)
+PopUpLEDSlider2 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMLEDSlider2)
+PopUpLEDSlider3 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMLEDSlider3)
+PopUpLEDSlider4 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMLEDSlider4)
 
 PopUp1.grid(row=0,column=0)   
 PopUpSlider1.grid(row=0,column=1)

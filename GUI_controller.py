@@ -1,6 +1,8 @@
 # import everything from tkinter module
 from tkinter import *   
 
+from Controller_Test_v2 import *
+
 # create a tkinter window
 root = Tk()             
  
@@ -60,19 +62,19 @@ def setPWMSlider4(Slider4_value):
 
 def setPWMLEDSlider1(SliderLED1_value):
     pwmValue = int(SliderLED1_value)
-    setPWMValue(1,pwmValue)
+    setPWMValue(0,pwmValue)
 
 def setPWMLEDSlider2(SliderLED2_value):
     pwmValue = int(SliderLED2_value)
-    setPWMValue(2,pwmValue)
+    setPWMValue(1,pwmValue)
 
 def setPWMLEDSlider3(SliderLED3_value):
     pwmValue = int(SliderLED3_value)
-    setPWMValue(3,pwmValue)
+    setPWMValue(2,pwmValue)
 
 def setPWMLEDSlider4(SliderLED4_value):
     pwmValue = int(SliderLED4_value)
-    setPWMValue(4,pwmValue)       
+    setPWMValue(3,pwmValue)       
 
 # Create a Button
 PopUp1 = Button(root, text = 'Pop Up 1 Deactivated', bd = '5',

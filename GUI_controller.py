@@ -1,5 +1,6 @@
 # import everything from tkinter module
 from tkinter import *   
+
  
 # create a tkinter window
 root = Tk()             
@@ -51,16 +52,26 @@ PopUpSlider4 = Scale(root,from_=0, to=255, orient=HORIZONTAL)
 # Set the position of button on the top of window.  
 
 
+#creates sliders for LED brightness
+PopUpLEDSlider1 = Scale(root,from_=0, to=255, orient=HORIZONTAL)
+PopUpLEDSlider2 = Scale(root,from_=0, to=255, orient=HORIZONTAL)
+PopUpLEDSlider3 = Scale(root,from_=0, to=255, orient=HORIZONTAL)
+PopUpLEDSlider4 = Scale(root,from_=0, to=255, orient=HORIZONTAL)
+
 PopUp1.grid(row=0,column=0)   
 PopUpSlider1.grid(row=0,column=1)
+PopUpLEDSlider1.grid(row=0,column=2)
 
 PopUp2.grid(row=1,column=0)
 PopUpSlider2.grid(row=1,column=1)
+PopUpLEDSlider2.grid(row=1,column=2)
 
 PopUp3.grid(row=2,column=0)
 PopUpSlider3.grid(row=2,column=1)
+PopUpLEDSlider3.grid(row=2,column=2)
 
 PopUp4.grid(row=3,column=0)
 PopUpSlider4.grid(row=3,column=1)
+PopUpLEDSlider4.grid(row=3,column=2)
 
 root.mainloop()

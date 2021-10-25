@@ -59,33 +59,33 @@ pca.frequency = 1000
 # setPWMValue(5,0)
 # setPWMValue(6,0)
 
-led_channel1 = pca.channels[0]
+# led_channel1 = pca.channels[0]
 
-led_channel1.duty_cycle = 0xffff
+# led_channel1.duty_cycle = 0xffff
 
-led_channel2 = pca.channels[1]
+# led_channel2 = pca.channels[1]
 
-led_channel2.duty_cycle = 0xffff
+# led_channel2.duty_cycle = 0xffff
 
-led_channel3 = pca.channels[2]
+# led_channel3 = pca.channels[2]
 
-led_channel3.duty_cycle = 0xffff
+# led_channel3.duty_cycle = 0xffff
 
-led_channel4 = pca.channels[3]
+# led_channel4 = pca.channels[3]
 
-led_channel4.duty_cycle = 0xffff
+# led_channel4.duty_cycle = 0xffff
 
-led_channel5 = pca.channels[4]
-led_channel5.duty_cycle = 0
+# led_channel5 = pca.channels[4]
+# led_channel5.duty_cycle = 0
 
-led_channel6 = pca.channels[5]
-led_channel6.duty_cycle = 0
+# led_channel6 = pca.channels[5]
+# led_channel6.duty_cycle = 0
 
-led_channel7 = pca.channels[6]
-led_channel7.duty_cycle = 0
+# led_channel7 = pca.channels[6]
+# led_channel7.duty_cycle = 0
 
-led_channel8 = pca.channels[7]
-led_channel8.duty_cycle = 0
+# led_channel8 = pca.channels[7]
+# led_channel8.duty_cycle = 0
 
 
 # time.sleep(5)

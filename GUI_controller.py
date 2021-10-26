@@ -7,9 +7,11 @@ from Controller_Test_v2 import *
 root = Tk()             
  
 # Open window having dimension 100x100
-root.geometry('500x500')
+root.geometry('600x600')
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=2)
+
+var = IntVar()
 
 def activatePopUp1():
     if PopUp1['text']=="Pop Up 1 Deactivated":
@@ -76,6 +78,9 @@ def setPWMLEDSlider4(SliderLED4_value):
     pwmValue = int(SliderLED4_value)
     setPWMValue(3,pwmValue)       
 
+def RadioButtonSelect():
+    print("You selected option " +str(var.get()))
+
 # Create a Button
 PopUp1 = Button(root, text = 'Pop Up 1 Deactivated', bd = '5',
                           command = activatePopUp1)
@@ -100,6 +105,24 @@ PopUpLEDSlider2 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMLE
 PopUpLEDSlider3 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMLEDSlider3)
 PopUpLEDSlider4 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMLEDSlider4)
 
+#creates Radiobuttons for tip/tilts
+
+MotorMikeA_EL = Radiobutton(root,text="A EL",variable=var,value=0,command=RadioButtonSelect)
+MotorMikeA_AZ = Radiobutton(root,text="A AZ",variable=var,value=1,command=RadioButtonSelect)
+
+MotorMikeB_EL = Radiobutton(root,text="B EL",variable=var,value=2,command=RadioButtonSelect)
+MotorMikeB_AZ = Radiobutton(root,text="B AZ",variable=var,value=3,command=RadioButtonSelect)
+
+MotorMikeC_EL = Radiobutton(root,text="C EL",variable=var,value=4,command=RadioButtonSelect)
+MotorMikeC_AZ = Radiobutton(root,text="C AZ",variable=var,value=5,command=RadioButtonSelect)
+
+MotorMikeD_EL = Radiobutton(root,text="D EL",variable=var,value=6,command=RadioButtonSelect)
+MotorMikeD_AZ = Radiobutton(root,text="D AZ",variable=var,value=7,command=RadioButtonSelect)
+
+MotorMikeB_Rotate45 = Radiobutton(root,text="B Rot 45 (EL)",variable=var,value=8,command=RadioButtonSelect)
+MotorMikeB_Lock = Radiobutton(root,text="B Lock",variable=var,value=9,command=RadioButtonSelect)
+
+
 PopUp1.grid(row=0,column=0)   
 PopUpSlider1.grid(row=0,column=1)
 PopUpLEDSlider1.grid(row=0,column=2)
@@ -115,5 +138,20 @@ PopUpLEDSlider3.grid(row=2,column=2)
 PopUp4.grid(row=3,column=0)
 PopUpSlider4.grid(row=3,column=1)
 PopUpLEDSlider4.grid(row=3,column=2)
+
+MotorMikeA_EL.grid(row=4,column=0)
+MotorMikeA_AZ.grid(row=4,column=1)
+
+MotorMikeB_EL.grid(row=5,column=0)
+MotorMikeB_AZ.grid(row=5,column=1)
+
+MotorMikeC_EL.grid(row=6,column=0)
+MotorMikeC_AZ.grid(row=6,column=1)
+
+MotorMikeD_EL.grid(row=7,column=0)
+MotorMikeD_AZ.grid(row=7,column=1)
+
+MotorMikeB_Rotate45.grid(row=8,column=0)
+MotorMikeB_Lock.grid(row=8,column=1)
 
 root.mainloop()

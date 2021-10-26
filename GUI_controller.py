@@ -80,6 +80,7 @@ def setPWMLEDSlider4(SliderLED4_value):
 
 def RadioButtonSelect():
     print("You selected option " +str(var.get()))
+    selectRelay(str(var.get))
 
 # Create a Button
 PopUp1 = Button(root, text = 'Pop Up 1 Deactivated', bd = '5',

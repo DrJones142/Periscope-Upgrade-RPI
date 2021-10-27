@@ -82,13 +82,14 @@ def RadioButtonSelect():
     print("You selected option " +str(var.get()))
     selectRelay(int(var.get()))
 
-def activateMotorMikeBackward():
+def activateMotorMikeBackward(event):
     print("Backward")
 
-def activateMotorMikeForwarrd():
+def activateMotorMikeForwarrd(event):
     print("Forward")
 
-
+def release(event):
+    print("Released")
 
 # Create a Button
 PopUp1 = Button(root, text = 'Pop Up 1 Deactivated', bd = '5',
@@ -101,9 +102,15 @@ PopUp4 = Button(root, text = 'Pop Up 4 Deactivated', bd = '5',
                           command = activatePopUp4)
 
 MotorMikeForwardButton = Button(root, text= 'Forward', bd = '5',
-                          command = activateMotorMikeForwarrd)
+                          )
 MotorMikeFBackwardButton = Button(root, text= 'Backward', bd = '5',
-                          command = activateMotorMikeBackward)
+                          )
+
+MotorMikeForwardButton.bind('<ButtonPress>',activateMotorMikeForwarrd) 
+MotorMikeForwardButton.bind('<ButtonRelease>',release)
+
+MotorMikeFBackwardButton.bind('<ButtonPress>',activateMotorMikeBackward)
+MotorMikeFBackwardButton.bind('<ButtonRelease>',release)
 
 #cretes sliders (PWM gen)
 PopUpSlider1 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlider1)

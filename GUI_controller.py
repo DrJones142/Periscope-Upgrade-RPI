@@ -80,7 +80,7 @@ def setPWMLEDSlider4(SliderLED4_value):
 
 def RadioButtonSelect():
     print("You selected option " +str(var.get()))
-    selectRelay(str(var.get))
+    selectRelay(int(var.get()))
 
 # Create a Button
 PopUp1 = Button(root, text = 'Pop Up 1 Deactivated', bd = '5',
@@ -114,15 +114,14 @@ MotorMikeA_AZ = Radiobutton(root,text="A AZ",variable=var,value=1,command=RadioB
 MotorMikeB_EL = Radiobutton(root,text="B EL",variable=var,value=2,command=RadioButtonSelect)
 MotorMikeB_AZ = Radiobutton(root,text="B AZ",variable=var,value=3,command=RadioButtonSelect)
 
-MotorMikeC_EL = Radiobutton(root,text="C EL",variable=var,value=4,command=RadioButtonSelect)
-MotorMikeC_AZ = Radiobutton(root,text="C AZ",variable=var,value=5,command=RadioButtonSelect)
+MotorMikeB_Rotate45 = Radiobutton(root,text="B Rot 45 (EL)",variable=var,value=4,command=RadioButtonSelect)
+MotorMikeB_Lock = Radiobutton(root,text="B Lock",variable=var,value=5,command=RadioButtonSelect)
 
-MotorMikeD_EL = Radiobutton(root,text="D EL",variable=var,value=6,command=RadioButtonSelect)
-MotorMikeD_AZ = Radiobutton(root,text="D AZ",variable=var,value=7,command=RadioButtonSelect)
+MotorMikeC_EL = Radiobutton(root,text="C EL",variable=var,value=6,command=RadioButtonSelect)
+MotorMikeC_AZ = Radiobutton(root,text="C AZ",variable=var,value=7,command=RadioButtonSelect)
 
-MotorMikeB_Rotate45 = Radiobutton(root,text="B Rot 45 (EL)",variable=var,value=8,command=RadioButtonSelect)
-MotorMikeB_Lock = Radiobutton(root,text="B Lock",variable=var,value=9,command=RadioButtonSelect)
-
+MotorMikeD_EL = Radiobutton(root,text="D EL",variable=var,value=8,command=RadioButtonSelect)
+MotorMikeD_AZ = Radiobutton(root,text="D AZ",variable=var,value=9,command=RadioButtonSelect)
 
 PopUp1.grid(row=0,column=0)   
 PopUpSlider1.grid(row=0,column=1)
@@ -146,13 +145,15 @@ MotorMikeA_AZ.grid(row=4,column=1)
 MotorMikeB_EL.grid(row=5,column=0)
 MotorMikeB_AZ.grid(row=5,column=1)
 
-MotorMikeC_EL.grid(row=6,column=0)
-MotorMikeC_AZ.grid(row=6,column=1)
+MotorMikeB_Rotate45.grid(row=6,column=0)
+MotorMikeB_Lock.grid(row=6,column=1)
 
-MotorMikeD_EL.grid(row=7,column=0)
-MotorMikeD_AZ.grid(row=7,column=1)
+MotorMikeC_EL.grid(row=7,column=0)
+MotorMikeC_AZ.grid(row=7,column=1)
 
-MotorMikeB_Rotate45.grid(row=8,column=0)
-MotorMikeB_Lock.grid(row=8,column=1)
+MotorMikeD_EL.grid(row=8,column=0)
+MotorMikeD_AZ.grid(row=8,column=1)
+
+
 
 root.mainloop()

@@ -39,14 +39,28 @@ def setPWMValue(channel,dutyCycle):
     dutyCycle_adjusted = dutyCycle*256
     pca.channels[channel].duty_cycle = dutyCycle_adjusted
 
+def selectRelay(relayInt):
+    print(relayInt)
+
 pin0 = mcp.get_pin(8)
 pin1 = mcp.get_pin(9)
 pin2 = mcp.get_pin(10)
 pin3 = mcp.get_pin(11)
+
+pin4 = mcp.get_pin(12)  #pins for Relay control
+pin5 = mcp.get_pin(13)
+pin6 = mcp.get_pin(14)
+pin7 = mcp.get_pin(15)
+
 pin0.switch_to_output(value=False)
 pin1.switch_to_output(value=False)
 pin2.switch_to_output(value=False)
 pin3.switch_to_output(value=False)
+
+pin4.switch_to_output(value=False)
+pin5.switch_to_output(value=False)
+pin6.switch_to_output(value=False)
+pin7.switch_to_output(value=False)
 
 pca.frequency = 1000
 

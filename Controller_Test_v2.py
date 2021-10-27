@@ -40,6 +40,22 @@ def setPWMValue(channel,dutyCycle):
     pca.channels[channel].duty_cycle = dutyCycle_adjusted
 
 def selectRelay(relayInt):
+    if relayInt & 0x1:
+        pin4.value = True
+    else:
+        pin4.value = False
+    if relayInt & 0x2:
+        pin5.value = True
+    else:
+        pin5.value = False
+    if relayInt & 0x4:
+        pin6.value = True
+    else:
+        pin6.value = False
+    if relayInt & 0x8:
+        pin7.value = True
+    else:
+        pin7.value = False
     print(relayInt)
 
 pin0 = mcp.get_pin(8)

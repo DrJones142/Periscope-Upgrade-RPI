@@ -1,7 +1,7 @@
 # import everything from tkinter module
 from tkinter import *   
 
-from Controller_Test_v2 import *
+ # from Controller_Test_v2 import *
 
 # create a tkinter window
 root = Tk()             
@@ -82,6 +82,14 @@ def RadioButtonSelect():
     print("You selected option " +str(var.get()))
     selectRelay(int(var.get()))
 
+def activateMotorMikeBackward():
+    print("Backward")
+
+def activateMotorMikeForwarrd():
+    print("Forward")
+
+
+
 # Create a Button
 PopUp1 = Button(root, text = 'Pop Up 1 Deactivated', bd = '5',
                           command = activatePopUp1)
@@ -92,11 +100,17 @@ PopUp3 = Button(root, text = 'Pop Up 3 Deactivated', bd = '5',
 PopUp4 = Button(root, text = 'Pop Up 4 Deactivated', bd = '5',
                           command = activatePopUp4)
 
+MotorMikeForwardButton = Button(root, text= 'Forward', bd = '5',
+                          command = activateMotorMikeForwarrd)
+MotorMikeFBackwardButton = Button(root, text= 'Backward', bd = '5',
+                          command = activateMotorMikeBackward)
+
 #cretes sliders (PWM gen)
 PopUpSlider1 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlider1)
 PopUpSlider2 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlider2)
 PopUpSlider3 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlider3)
 PopUpSlider4 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlider4)
+MotorMikeSlider = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlider4)
 # Set the position of button on the top of window.  
 
 
@@ -154,6 +168,8 @@ MotorMikeC_AZ.grid(row=7,column=1)
 MotorMikeD_EL.grid(row=8,column=0)
 MotorMikeD_AZ.grid(row=8,column=1)
 
-
+MotorMikeForwardButton.grid(row=9,column=0)
+MotorMikeFBackwardButton.grid(row=9,column=1)
+MotorMikeSlider.grid(row=9,column=2)
 
 root.mainloop()

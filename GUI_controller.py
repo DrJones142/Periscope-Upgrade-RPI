@@ -60,6 +60,10 @@ def setPWMSlider3(Slider3_value):
 def setPWMSlider4(Slider4_value):
     setPWMValue(7,int(Slider4_value))
 
+def setPWMSlider5(Slider5_value):   #slider for B AZ Rotate 
+    pwmValue = int(Slider5_value)
+    setPWMValue(8,pwmValue)
+
 ## functions for PWM (brightness) 
 
 def setPWMLEDSlider1(SliderLED1_value):
@@ -118,6 +122,7 @@ PopUpSlider2 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlide
 PopUpSlider3 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlider3)
 PopUpSlider4 = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlider4)
 MotorMikeSlider = Scale(root,from_=0, to=255, orient=HORIZONTAL,command=setPWMSlider4)
+BAZRotateSlider = Scale(root,from_=0, to=50,orient=HORIZONTAL, command=setPWMSlider5)
 # Set the position of button on the top of window.  
 
 
@@ -143,6 +148,9 @@ MotorMikeC_AZ = Radiobutton(root,text="C AZ",variable=var,value=7,command=RadioB
 
 MotorMikeD_EL = Radiobutton(root,text="D EL",variable=var,value=8,command=RadioButtonSelect)
 MotorMikeD_AZ = Radiobutton(root,text="D AZ",variable=var,value=9,command=RadioButtonSelect)
+
+B_AZ_Rotate = Button(root, text= 'Astrometric Mode', bd=5)
+
 
 PopUp1.grid(row=0,column=0)   
 PopUpSlider1.grid(row=0,column=1)
@@ -178,5 +186,8 @@ MotorMikeD_AZ.grid(row=8,column=1)
 MotorMikeForwardButton.grid(row=9,column=0)
 MotorMikeFBackwardButton.grid(row=9,column=1)
 MotorMikeSlider.grid(row=9,column=2)
+
+B_AZ_Rotate.grid(row=10,column=0)
+BAZRotateSlider.grid(row=10,column=1)
 
 root.mainloop()

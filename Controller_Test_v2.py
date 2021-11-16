@@ -8,8 +8,8 @@ from adafruit_pca9685 import PCA9685
 
 i2c_bus = busio.I2C(SCL, SDA)
 
-pca = PCA9685(i2c_bus)
-mcp = MCP23017(i2c_bus)  # MCP23017
+pca = PCA9685(i2c_bus)   # PCA9685 chip
+mcp = MCP23017(i2c_bus)  # MCP23017 chip
 
 def raisePopUp(PopUpNum):
     if PopUpNum == 1:

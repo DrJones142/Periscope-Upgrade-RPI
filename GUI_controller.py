@@ -1,7 +1,9 @@
+GUI_DEBUG_MODE = 0
+
 # import everything from tkinter module
 from tkinter import *   
 
- # from Controller_Test_v2 import *
+from Test_Library import *
 
 # create a tkinter window
 root = Tk()             
@@ -12,6 +14,9 @@ root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=2)
 
 var = IntVar()
+
+CAzCountStringVar = StringVar()
+CElCountStringVar = StringVar()
 
 def activatePopUp1():
     if PopUp1['text']=="Pop Up 1 Deactivated":
@@ -83,14 +88,16 @@ def setPWMLEDSlider4(SliderLED4_value):
     setPWMValue(3,pwmValue)       
 
 def RadioButtonSelect():
-    print("You selected option " +str(var.get()))
+    if(GUI_DEBUG_MODE):
+        print("GUI: You selected option " +str(var.get()))
     selectRelay(int(var.get()))
 
 def activateMotorMikeBackward(event):
-    print("Backward")
+    if(GUI_DEBUG_MODE):
+        print("GUI:Backward")
 
 def activateMotorMikeForwarrd(event):
-    print("Forward")
+    forward()
 
 def release(event):
     print("Released")
@@ -151,6 +158,9 @@ MotorMikeD_AZ = Radiobutton(root,text="D AZ",variable=var,value=9,command=RadioB
 
 B_AZ_Rotate = Button(root, text= 'Astrometric Mode', bd=5)
 
+LabelCAZ = Label(root, textvariable=CAzCountStringVar, relief=RAISED) 
+LabelCEL = Label(root, textvariable=CElCountStringVar, relief=RAISED)
+
 
 PopUp1.grid(row=0,column=0)   
 PopUpSlider1.grid(row=0,column=1)
@@ -189,5 +199,11 @@ MotorMikeSlider.grid(row=9,column=2)
 
 B_AZ_Rotate.grid(row=10,column=0)
 BAZRotateSlider.grid(row=10,column=1)
+
+LabelCAZ.grid(row=11,column=0)
+LabelCEL.grid(row=11,column=1)
+
+CAzCountStringVar.set("C AZ: 0")
+CElCountStringVar.set("C EL: 0")
 
 root.mainloop()
